@@ -4,11 +4,6 @@ $overlay-bg-color: rgba(255,255,255,.85);
 $animation-bg-color: $overlay-bg-color;
 
 // Animation
-@-webkit-keyframes fluidboxLoading {
-	0%		{ -webkit-transform: translate(-50%, -50%) rotateX(0)		rotateY(0);			}
-	50%		{ -webkit-transform: translate(-50%, -50%) rotateX(-180deg)	rotateY(0);			}
-	100%	{ -webkit-transform: translate(-50%, -50%) rotateX(-180deg)	rotateY(-180deg);	}
-}
 @keyframes fluidboxLoading {
 	0%		{ transform: translate(-50%, -50%) rotateX(0)		rotateY(0);			}
 	50%		{ transform: translate(-50%, -50%) rotateX(-180deg)	rotateY(0);			}
@@ -22,8 +17,6 @@ $animation-bg-color: $overlay-bg-color;
 .fluidbox-overlay {
 	background-color: $overlay-bg-color;
 	cursor: pointer;
-	cursor: -webkit-zoom-out;
-	cursor: -moz-zoom-out;
 	cursor: zoom-out;
 	opacity: 0;
 	position: fixed;
@@ -48,9 +41,6 @@ $animation-bg-color: $overlay-bg-color;
 	background-size: 100% 100%;
 	background-position: center center;	
 	position: absolute;
-	-webkit-transition-property: opacity, -webkit-transform;
-	-moz-transition-property: opacity, -moz-transform;
-	-o-transition-property: opacity, -o-transform;
 	transition-property: opacity, transform;
 	transition-duration: 0s, $transition-duration;
 	transition-delay: $transition-duration, 0s;
@@ -81,7 +71,6 @@ $animation-bg-color: $overlay-bg-color;
 }
 
 .fluidbox-loading .fluidbox-loader::before {
-	-webkit-animation: fluidboxLoading 1s 0s infinite ease-in-out forwards;
 	animation: fluidboxLoading 1s 0s infinite ease-in-out forwards;
 	opacity: 1;
 }
