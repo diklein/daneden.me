@@ -32,9 +32,9 @@ module Jekyll
       source = "<figure class='#{@class}'>"
 
       if Jekyll.configuration({'config' => ['_config.yml', '_config_local.yml']})['production'] == true 
-        source += "<img data-src=\"http://daneden.me/uploads/#{@url}\" class=\"resrc\" />"
+        source += "<a href=\"http://daneden.me/uploads/#{@url}\" data-fluidbox><img data-src=\"http://daneden.me/uploads/#{@url}\" class=\"resrc\" /></a>"
       else
-        source += "<img data-src=\"http://127.0.0.1:4000/uploads/#{@url}\" class=\"resrc\" />"
+        source += "<a href=\"http://127.0.0.1:4000/uploads/#{@url}\" data-fluidbox><img data-src=\"http://127.0.0.1:4000/uploads/#{@url}\" class=\"resrc\" /></a>"
       end
 
       @caption = Kramdown::Document.new(@caption).to_html if @caption
